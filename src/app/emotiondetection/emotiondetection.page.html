@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+      <ion-title>
+           Reviews
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+      <ion-toolbar>
+          <ion-title size="large">Movie Reviews</ion-title>
+      </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+      <ion-input name="movie" placeholder="Enter Movie name" ngModel required [(ngModel)]="searchMovie"></ion-input>
+  </ion-item>
+
+  <div>
+      <button type="button" class="btn-primary" (click)="getMovieDetails()">Get Movie Details</button>
+  </div>
+
+  <div *ngIf="movieDetails != null">
+      <strong>Hey {{movieDetails.articles[0].description}}</strong>
+  </div>
+
+  <div>
+      <button type="button" class="btn-primary" (click)="classifyCheck()">Classify Data</button>
+  </div>
+
+  <div id="container" *ngIf="classifyData != null">
+      <strong>Hey {{result}}</strong>
+  </div>
+</ion-content>
+
+
+
+
