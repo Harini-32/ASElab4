@@ -13,3 +13,6 @@ export class RegestrationPage implements OnInit {
   }
 
 }
+
+
+

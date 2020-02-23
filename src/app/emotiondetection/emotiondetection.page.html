@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
       <ion-title>
-           Reviews
+          <b>Article Response</b>  
       </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,28 +9,43 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
       <ion-toolbar>
-          <ion-title size="large">Movie Reviews</ion-title>
+          <ion-title size="large">Article Reviews</ion-title>
       </ion-toolbar>
   </ion-header>
-
+<div class="item">
   <ion-item>
-      <ion-input name="movie" placeholder="Enter Movie name" ngModel required [(ngModel)]="searchMovie"></ion-input>
+      <ion-input name="article" placeholder="Enter article name" ngModel required [(ngModel)]="searcharticle"></ion-input>
   </ion-item>
+</div>
 
-  <div>
-      <button type="button" class="btn-primary" (click)="getMovieDetails()">Get Movie Details</button>
+  <div class="button">
+  
+    
+    <button type="button"  (click)="getarticleDetails()">Get Article Details</button>
   </div>
 
-  <div *ngIf="movieDetails != null">
-      <strong>Hey {{movieDetails.articles[0].description}}</strong>
+  <div class="button1" *ngIf="articleDetails != null">
+      <br>
+      <b>Title:</b>
+      <br>
+      <strong>{{articleDetails.articles[0].title}}</strong>
+      <br>
+      <br>
+      <b>Description:</b>
+      <br>
+      <strong>{{articleDetails.articles[0].description}}</strong>
+      <br>
+      <br> 
+      
   </div>
 
-  <div>
+  <div class="button">
       <button type="button" class="btn-primary" (click)="classifyCheck()">Classify Data</button>
   </div>
 
   <div id="container" *ngIf="classifyData != null">
-      <strong>Hey {{result}}</strong>
+      <br>
+      <strong>{{result}}</strong>
   </div>
 </ion-content>
 

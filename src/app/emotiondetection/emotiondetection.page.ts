@@ -13,20 +13,20 @@ export class EmotiondetectionPage {
     }
 
     public result;
-    public movieDetails;
-    public searchMovie;
+    public articleDetails;
+    public searcharticle;
 
-    getMovieDetails() {
-      console.log('hey hey' + this.searchMovie);
-        this.httpClient.get('http://newsapi.org/v2/everything?q='+ this.searchMovie+'&from=2020-01-22&sortBy=publishedAt&apiKey=433ecbec0b7443ec8ee9f869db6122b2')
+    getarticleDetails() {
+      console.log('hey hey' + this.searcharticle);
+        this.httpClient.get('http://newsapi.org/v2/everything?q='+ this.searcharticle+'&from=2020-01-22&sortBy=publishedAt&apiKey=433ecbec0b7443ec8ee9f869db6122b2')
             .subscribe(data => {
-                this.movieDetails = data;
+                this.articleDetails = data;
             });
-            console.log(this.searchMovie);  
+            console.log(this.searcharticle);  
     }
 
     classifyCheck(){
-                this.httpClient.get('https://cors-anywhere.herokuapp.com/'+ 'https://api.uclassify.com/v1/uClassify/Sentiment/classify/?readKey=YGzIEYAJW6Q4&text=' + this.movieDetails.articles[0].description)
+                this.httpClient.get('https://cors-anywhere.herokuapp.com/'+ 'https://api.uclassify.com/v1/uClassify/Sentiment/classify/?readKey=YGzIEYAJW6Q4&text=' + this.articleDetails.articles[0].title)
             .subscribe(data => {
                 this.classifyData= data;
                 // @ts-ignore

@@ -1,0 +1,35 @@
+ion-title{
+    --color: lightgreen;
+    text-align: center;
+    
+}
+ion-button{
+    --color: powderblue;
+}
+ion-item{
+    text-align: center;
+    --color: rgb(153, 57, 33);
+    background-color: grey;
+}
+.button{
+    color: rgb(20, 98, 112);
+    text-align: center;
+    padding: 10px;
+    
+}
+.button1{
+    color: black;
+}
+
+
+ion-content {
+    --background: none;
+    background-image: url('https://i.pinimg.com/474x/33/46/18/3346182bd3ae2f87a0f5fcec453904f4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#container{
+    text-align: center;
+}
